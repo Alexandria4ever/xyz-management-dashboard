@@ -87,19 +87,19 @@ body {
   }
   
   .form-container button {
-    background-color: #4caf50;
-    color: #ffffff;
+    background-color: #ebeceb;
+    color: #61088a;
     cursor: pointer;
     transition:
       background-color 0.3s ease,
       transform 0.2s ease,
       box-shadow 0.3s ease;
-    box-shadow: 0 0 5px #4caf50; 
+    box-shadow: 0 0 5px #b7a1df; 
   }
   
   .form-container button:hover {
-    background-color: #45a049; 
+    background-color: #d1c2ec; 
     transform: scale(1.03);
-    box-shadow: 0 0 10px #4caf50;
+    box-shadow: 0 0 10px #b7a1df;
   }
   
