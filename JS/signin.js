@@ -58,4 +58,18 @@ if (signinForm) {
         alert("Error: " + error.message);
       });
   });
+
+  const githubProvider = new GithubAuthProvider();
+
+  document.getElementById("githubSignInButton").addEventListener("click", () => {
+  signInWithPopup(auth, githubProvider)
+    .then((result) => {
+      const user = result.user;
+      console.log("GitHub sign-in successful:", user);
+      // Optionally redirect or show success message
+    })
+    .catch((error) => {
+      console.error("GitHub sign-in error:", error.message);
+    });
+  });
 }

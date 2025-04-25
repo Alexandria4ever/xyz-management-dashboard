@@ -40,9 +40,6 @@ if (signup_form) {
 
     confirmPassword.classList.toggle("is-valid", confirmPassword.value === password.value);
     confirmPassword.classList.toggle("is-invalid", confirmPassword.value !== password.value);
-
-    dob.classList.toggle("is-valid", !!dob.value);
-    dob.classList.toggle("is-invalid", !dob.value);
   });
 
   signup_form.addEventListener("submit", function (e) {
@@ -55,7 +52,7 @@ if (signup_form) {
           setDoc(doc(db, "users", user.uid), {
             name: name.value,
             email: email.value,
-            dob: dob.value,
+            
           }).then(() => {
             window.location.href = "/dashboard.html";
           }).catch((error) => {
@@ -81,19 +78,17 @@ if (signup_form) {
         setDoc(doc(db, "users", user.uid), {
             name: user.displayName,
             email: user.email,
-            dob: "", // Google doesn’t give DOB, so leave it blank or ask later
+            dob: "", 
           }).then(() => {
             window.location.href = "/dashboard.html";
           }).catch((error) => {
             alert("Error saving data: " + error.message);
-          });
-          
-        
-      })
+          });})
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         alert(errorMessage);
       });
   });
+
 }
