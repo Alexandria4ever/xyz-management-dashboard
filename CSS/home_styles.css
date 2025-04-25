@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #0a0a1f, #10102c, #1b1b3f, #2a2a6e);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease-in-out infinite;
+    color: #f0f0f5;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    height: 100vh;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(18, 18, 30, 0.97);
+    padding-top: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+  }
+  
+  .sidebar h4 {
+    color: #9b7eff;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .sidebar .nav-link {
+    color: #c9c9e0;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1rem;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+  }
+  
+  .sidebar .nav-link:hover,
+  .sidebar .nav-link.active {
+    background-color: rgba(155, 126, 255, 0.2);
+    color: #ffffff;
+  }
+  
+  /* Main content */
+  .main-content {
+    margin-left: 250px;
+    padding: 2rem;
+    background: transparent;
+    width: 100%;
+  }
+  
+  /* Welcome section */
+  .welcome-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 25px rgba(155, 126, 255, 0.15);
+    backdrop-filter: blur(10px);
+  }
+  
+  .welcome-box h2 {
+    color: #ffffff;
+  }
+  
+  .welcome-box p {
+    color: #d4d4f0;
+  }
+  
+  /* Cards for dashboard sections */
+  .card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 1.5rem;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(12px);
+    color: #babacf;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h5 {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card p {
+    color: #babacf;
+    font-size: 0.95rem;
+  }
+  
+  /* Canvas stars positioning */
+  #starsCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 126, 255, 0.5);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .card-header {
+    background-color: #1B1B35;
+    color: #fff;
+    font-weight: 600;
+    /* border-bottom: 1px solid #1b1b3f; */
+  }
+  
+  .list-group-item {
+    background-color: #242444; 
+    color: #f1f1f1;
+    border: none;
+    /* border-bottom: 1px solid #1b1b3f; */
+  }
+  
+  .list-group-item:last-child {
+    border-bottom: none;
+  }
+  /* Navbar Styling */
+.navbar {
+  border-radius: 15px; /* Rounded corners */
+  background-color: rgba(155, 126, 255, 0.15); /* Semi-transparent black */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+/* Make navbar items align nicely with spacing */
+.navbar-nav .nav-item + .nav-item {
+  margin-left: 10px;
+}
+
+/* Styling the links */
+.nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 12px 18px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for links */
+.nav-link:hover {
+  color: #f8f9fa; /* Slightly lighter color on hover */
+  background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+  border-radius: 8px;
+}
+
+/* Non-clickable separator style */
+.navbar-nav .nav-item span.nav-link {
+  color: #bbb; /* Light color for separator */
+  pointer-events: none; /* Disables interaction */
+}
+
+/* Toggler icon */
+.navbar-toggler-icon {
+  background-color: #fff; /* Change the color of the hamburger icon */
+}
+
+/* Make navbar fixed and always on top */
+body {
+  padding-top: 70px; /* Adjust page content position so it's not hidden behind navbar */
+}
+
+/* Add transition effects for the navbar background color on scroll */
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.9) !important; /* Darker background when scrolled */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+}
+
+  
