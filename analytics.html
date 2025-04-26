@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Analytics | XYZ Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      color: #ffffff;
+    }
+
+    header {
+      background-color: #121212;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #a200ff;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #1c1c1e;
+      border-radius: 1rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #a200ff;
+      margin-bottom: 1rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      flex: 1;
+      min-width: 200px;
+      background-color: #2a2a2d;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: inset 0 0 5px #000000aa;
+    }
+
+    .stat-title {
+      font-size: 0.9rem;
+      color: #aaaaaa;
+    }
+
+    .stat-value {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #a200ff;
+    }
+
+    .chart {
+      height: 200px;
+      background: repeating-linear-gradient(
+        to top,
+        #a200ff33,
+        #a200ff33 10px,
+        transparent 10px,
+        transparent 20px
+      );
+      position: relative;
+      margin-bottom: 2rem;
+      border-radius: 0.5rem;
+    }
+
+    .bar {
+      position: absolute;
+      bottom: 0;
+      width: 10%;
+      background-color: #a200ff;
+      border-radius: 5px 5px 0 0;
+      transition: height 0.3s;
+    }
+
+    .footer {
+      text-align: center;
+      color: #888;
+      font-size: 0.8rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📊 pixelStorm Analytics</h1>
+    <span>User: <strong>admin@xyz.com</strong></span>
+  </header>
+
+  <div class="container">
+    <h2>Overview</h2>
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-title">Total Videos Uploaded</div>
+        <div class="stat-value" id="totalVideos">128</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Active Staff</div>
+        <div class="stat-value" id="activeStaff">12</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Monthly Uploads</div>
+        <div class="stat-value" id="monthlyUploads">34</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">Top Category</div>
+        <div class="stat-value" id="topCategory">Gaming</div>
+      </div>
+    </div>
+
+    <h2>Monthly Upload Trend</h2>
+    <div class="chart" id="chart">
+      <!-- Bars will be inserted here -->
+    </div>
+
+    <div class="footer">Data last updated: April 26, 2025</div>
+  </div>
+
+  <script>
+    const monthlyData = [5, 8, 12, 7, 15, 10, 9, 11, 13, 17]; // Hardcoded monthly uploads
+    const chart = document.getElementById('chart');
+
+    monthlyData.forEach((val, i) => {
+      const bar = document.createElement('div');
+      bar.className = 'bar';
+      bar.style.left = `${i * 10 + 2}%`;
+      bar.style.height = `${val * 10}px`;
+      chart.appendChild(bar);
+    });
+  </script>
+</body>
+</html>

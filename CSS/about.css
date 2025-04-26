@@ -1,0 +1,132 @@
+body 
+ {
+    color:white;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+   
+    background: linear-gradient(-45deg, #000014, #0a0a23, #2e2e56, #1b3d63);
+    background-size: 400% 400%;
+    animation: gradientShift 10s ease-in-out infinite;
+  }
+/* starry background */
+@keyframes gradientShift
+ {
+    0% 
+    {
+      background-position: 0% 50%;
+    }
+    50% 
+    {
+      background-position: 100% 50%;
+    }
+    100% 
+    {
+      background-position: 0% 50%;
+    }
+  }
+  
+  @keyframes slideIn 
+  {
+    0% 
+    {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% 
+    {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+canvas 
+  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }  
+
+.fet{
+    z-index: 2;
+}
+.obj{
+    z-index: 2;
+}
+   
+.fet h1{
+    margin-left: 2rem;
+
+    padding:20px;
+}
+.fet ul{
+    list-style:none;
+    margin-left: 23px;
+}
+.fet li{
+    margin-bottom:10px;
+}
+.fet img{
+   margin-right: 13rem;
+   margin-top: 7rem;
+}
+
+hr{
+    background-color: deeppink;
+    border: none;
+    height: 10px;
+    box-shadow: 0 0 10px #b7a1df;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+.obj ul{
+    list-style:none;
+    font-size: medium;
+}
+.obj li{
+    margin-bottom:10px;
+}
+.objective-img img{
+    margin-left: 17rem; 
+}
+.button a:hover{
+    color:black;
+}
+.navbar {
+    border-radius: 15px; /* Rounded corners */
+    background-color: rgba(155, 126, 255, 0.15); /* Semi-transparent black */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Soft shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  /* Make navbar items align nicely with spacing */
+  .navbar-nav .nav-item + .nav-item {
+    margin-left: 10px;
+  }
+  
+  /* Styling the links */
+  .nav-link {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 12px 18px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect for links */
+  .nav-link:hover {
+    color: #f8f9fa; /* Slightly lighter color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+    border-radius: 8px;
+  }
+  
+  .nav-icon {
+    margin-right: 5px;
+  }
